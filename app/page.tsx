@@ -15,8 +15,8 @@ export default function Home() {
       <Creations />
       <Services />
       <Testimonials />
-      <Contact />
       <InstagramFeed />
+      <Contact />
       <ScrollToTop />
     </main>
   )
