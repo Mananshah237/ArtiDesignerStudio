@@ -55,9 +55,9 @@ export default function Creations() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-serif text-3xl md:text-4xl text-[#4A3636] mb-4">Our Creations</h2>
-          <div className="w-20 h-1 bg-[#FFD700] mx-auto mb-6"></div>
-          <p className="text-[#4A3636]/70 max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-brandNavy mb-4">Our Creations</h2>
+          <div className="w-20 h-1 bg-brandGold mx-auto mb-6"></div>
+          <p className="text-brandNavy/70 max-w-2xl mx-auto">
             Discover our exquisite collection of handcrafted ethnic wear, designed to celebrate the beauty of Indian
             craftsmanship and contemporary fashion sensibilities.
           </p>
@@ -69,7 +69,7 @@ export default function Creations() {
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="data-[state=active]:bg-[#FEC5E5] data-[state=active]:text-[#4A3636] rounded-full border border-[#FEC5E5]/30"
+                className="data-[state=active]:bg-brandRed data-[state=active]:text-brandNavy rounded-full border border-brandRed/30"
               >
                 {category.name}
               </TabsTrigger>
@@ -105,9 +105,10 @@ export default function Creations() {
         </Tabs>
 
         <div className="text-center mt-12">
-          <Button className="rounded-full bg-[#FFDAB9] hover:bg-[#FFDAB9]/80 text-[#4A3636] px-8">
-            View All Collections
-          </Button>
+        <Button asChild className="rounded-full bg-brandGold hover:bg-brandGold/80 text-brandNavy px-8">
+  <a href="/collections">View All Collections</a>
+</Button>
+
         </div>
       </div>
     </section>

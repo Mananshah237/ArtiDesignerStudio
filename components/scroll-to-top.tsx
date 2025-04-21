@@ -33,7 +33,7 @@ export default function ScrollToTop() {
         <Button
           variant="outline"
           size="icon"
-          className="rounded-full bg-[#FEC5E5] border-none text-[#4A3636] hover:bg-[#FEC5E5]/80 shadow-md"
+          className="rounded-full bg-brandRed border-none text-brandNavy hover:bg-brandRed/80 shadow-md"
           onClick={scrollToTop}
         >
           <ChevronUp className="h-5 w-5" />

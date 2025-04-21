@@ -52,7 +52,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors for Arti Designer Studio
+        // Custom brand colors
+        brandRed: "#B22222",
+        brandGold: "#D4AF37",
+        brandNavy: "#001F3F",
         peach: "#FFDAB9",
         ivory: "#FFFFF0",
         blush: "#FEC5E5",

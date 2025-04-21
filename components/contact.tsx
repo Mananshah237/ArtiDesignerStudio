@@ -23,9 +23,9 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-serif text-3xl md:text-4xl text-[#4A3636] mb-4">Visit Us</h2>
-          <div className="w-20 h-1 bg-[#FFD700] mx-auto mb-6"></div>
-          <p className="text-[#4A3636]/70 max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-brandNavy mb-4">Visit Us</h2>
+          <div className="w-20 h-1 bg-brandGold mx-auto mb-6"></div>
+          <p className="text-brandNavy/70 max-w-2xl mx-auto">
             We'd love to meet you in person. Visit our studio or get in touch with us to schedule a consultation.
           </p>
         </motion.div>
@@ -59,67 +59,46 @@ export default function Contact() {
             className="flex flex-col justify-between"
           >
             <div className="mb-8">
-              <h3 className="font-serif text-2xl text-[#4A3636] mb-6">Contact Information</h3>
+              <h3 className="font-serif text-2xl text-brandNavy mb-6">Contact Information</h3>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 text-[#FEC5E5] mt-1" />
+                  <MapPin className="h-5 w-5 text-brandRed mt-1" />
                   <div>
-                    <p className="text-[#4A3636] font-medium">Address</p>
-                    <p className="text-[#4A3636]/70">Valentine Circle, Waghawadi Road, Bhavnagar, Gujarat, India</p>
+                    <p className="text-brandNavy font-medium">Address</p>
+                    <p className="text-brandNavy/70">Valentine Circle, Waghawadi Road, Bhavnagar, Gujarat, India</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 text-[#FEC5E5] mt-1" />
+                  <Phone className="h-5 w-5 text-brandRed mt-1" />
                   <div>
-                    <p className="text-[#4A3636] font-medium">Phone</p>
-                    <p className="text-[#4A3636]/70">+91 98792 08560</p>
+                    <p className="text-brandNavy font-medium">Phone</p>
+                    <p className="text-brandNavy/70">+91 98792 08560</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Instagram className="h-5 w-5 text-[#FEC5E5] mt-1" />
+                  <Instagram className="h-5 w-5 text-brandRed mt-1" />
                   <div>
-                    <p className="text-[#4A3636] font-medium">Instagram</p>
-                    <p className="text-[#4A3636]/70">@artidesignerstudio</p>
+                    <p className="text-brandNavy font-medium">Instagram</p>
+                    <p className="text-brandNavy/70">@artidesignerstudio</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="font-serif text-2xl text-[#4A3636] mb-6">Send us a Message</h3>
+              <h3 className="font-serif text-2xl text-brandNavy mb-6">Send us a Message</h3>
 
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Input
-                      placeholder="Your Name"
-                      className="rounded-md border-[#FEC5E5]/30 focus-visible:ring-[#FEC5E5]"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      placeholder="Your Email"
-                      type="email"
-                      className="rounded-md border-[#FEC5E5]/30 focus-visible:ring-[#FEC5E5]"
-                    />
-                  </div>
+                  <Input placeholder="Your Name" className="rounded-md border-brandRed/30 focus-visible:ring-brandRed" />
+                  <Input placeholder="Your Email" type="email" className="rounded-md border-brandRed/30 focus-visible:ring-brandRed" />
                 </div>
-                <div>
-                  <Input
-                    placeholder="Subject"
-                    className="rounded-md border-[#FEC5E5]/30 focus-visible:ring-[#FEC5E5]"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder="Your Message"
-                    className="min-h-[120px] rounded-md border-[#FEC5E5]/30 focus-visible:ring-[#FEC5E5]"
-                  />
-                </div>
-                <Button className="rounded-full bg-[#FFDAB9] hover:bg-[#FFDAB9]/80 text-[#4A3636] px-8">
+                <Input placeholder="Subject" className="rounded-md border-brandRed/30 focus-visible:ring-brandRed" />
+                <Textarea placeholder="Your Message" className="min-h-[120px] rounded-md border-brandRed/30 focus-visible:ring-brandRed" />
+                <Button className="rounded-full bg-brandGold hover:bg-brandGold/80 text-brandNavy px-8">
                   Send Message
                 </Button>
               </form>

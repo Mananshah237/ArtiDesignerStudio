@@ -56,7 +56,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-[#FEC5E5]/10" id="testimonials">
+    <section className="py-20 bg-brandRed/10" id="testimonials">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -65,9 +65,9 @@ export default function Testimonials() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-serif text-3xl md:text-4xl text-[#4A3636] mb-4">Customer Love</h2>
-          <div className="w-20 h-1 bg-[#FFD700] mx-auto mb-6"></div>
-          <p className="text-[#4A3636]/70 max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-brandNavy mb-4">Customer Love</h2>
+          <div className="w-20 h-1 bg-brandGold mx-auto mb-6"></div>
+          <p className="text-brandNavy/70 max-w-2xl mx-auto">
             Hear what our customers have to say about their experience with Arti Designer Studio.
           </p>
         </motion.div>
@@ -82,8 +82,8 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center text-center"
             >
-              <Quote className="h-12 w-12 text-[#FFD700] mb-6" />
-              <p className="text-lg md:text-xl text-[#4A3636]/80 italic mb-8 max-w-3xl">
+              <Quote className="h-12 w-12 text-brandGold mb-6" />
+              <p className="text-lg md:text-xl text-brandNavy/80 italic mb-8 max-w-3xl">
                 "{testimonials[currentIndex].content}"
               </p>
               <Avatar className="h-16 w-16 mb-4">
@@ -93,8 +93,8 @@ export default function Testimonials() {
                 />
                 <AvatarFallback>{testimonials[currentIndex].name.charAt(0)}</AvatarFallback>
               </Avatar>
-              <h3 className="font-serif text-xl text-[#4A3636]">{testimonials[currentIndex].name}</h3>
-              <p className="text-[#4A3636]/70">{testimonials[currentIndex].role}</p>
+              <h3 className="font-serif text-xl text-brandNavy">{testimonials[currentIndex].name}</h3>
+              <p className="text-brandNavy/70">{testimonials[currentIndex].role}</p>
             </motion.div>
           </div>
 
@@ -104,7 +104,7 @@ export default function Testimonials() {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-[#FFD700] w-6" : "bg-[#FFD700]/30"
+                  index === currentIndex ? "bg-brandGold w-6" : "bg-brandGold/30"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -114,7 +114,7 @@ export default function Testimonials() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full border-[#FEC5E5] text-[#4A3636] hover:bg-[#FEC5E5]/10 hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full border-brandRed text-brandNavy hover:bg-brandRed/10 hidden md:flex"
             onClick={prevTestimonial}
           >
             <ChevronLeft className="h-6 w-6" />
@@ -124,7 +124,7 @@ export default function Testimonials() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full border-[#FEC5E5] text-[#4A3636] hover:bg-[#FEC5E5]/10 hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full border-brandRed text-brandNavy hover:bg-brandRed/10 hidden md:flex"
             onClick={nextTestimonial}
           >
             <ChevronRight className="h-6 w-6" />

@@ -20,7 +20,7 @@ export default function InstagramFeed() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="py-20 bg-[#FFFFF0]/50" id="instagram">
+    <section className="py-20 bg-brandGold/10" id="instagram">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -29,9 +29,9 @@ export default function InstagramFeed() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-serif text-3xl md:text-4xl text-[#4A3636] mb-4">Follow Us on Instagram</h2>
-          <div className="w-20 h-1 bg-[#FFD700] mx-auto mb-6"></div>
-          <p className="text-[#4A3636]/70 max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-brandNavy mb-4">Follow Us on Instagram</h2>
+          <div className="w-20 h-1 bg-brandGold mx-auto mb-6"></div>
+          <p className="text-brandNavy/70 max-w-2xl mx-auto">
             Stay updated with our latest designs and collections by following us on Instagram.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export default function InstagramFeed() {
         <div className="text-center mt-10">
           <Button
             variant="outline"
-            className="rounded-full border-[#FEC5E5] text-[#4A3636] hover:bg-[#FEC5E5]/10"
+            className="rounded-full border-brandRed text-brandNavy hover:bg-brandRed/10"
             asChild
           >
             <a href="https://www.instagram.com/artidesignerstudio" target="_blank" rel="noopener noreferrer">

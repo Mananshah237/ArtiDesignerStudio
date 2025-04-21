@@ -25,16 +25,18 @@ export default function Hero() {
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-4">Arti Designer Studio</h1>
           <p className="font-serif text-xl md:text-2xl text-white/90 italic mb-8">Elegance Tailored Just for You</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="rounded-full bg-[#FEC5E5] hover:bg-[#FEC5E5]/90 text-[#4A3636] px-8 py-6" size="lg">
+            <Button className="rounded-full bg-brandGold hover:bg-brandGold/90 text-brandNavy px-8 py-4 text-lg font-semibold" size="lg">
               Explore Collections
             </Button>
             <Button
-              variant="outline"
-              className="rounded-full border-white text-white hover:bg-white/10 px-8 py-6"
-              size="lg"
-            >
-              Book Consultation
-            </Button>
+  asChild
+  className="rounded-full bg-brandRed hover:bg-brandRed/90 text-white px-8 py-4 text-lg font-semibold"
+>
+  <a href="https://wa.me/919879208560" target="_blank" rel="noopener noreferrer">
+    Book Consultation
+  </a>
+</Button>
+
           </div>
         </motion.div>
       </div>
