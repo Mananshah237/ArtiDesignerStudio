@@ -64,12 +64,12 @@ export default function Creations() {
         </motion.div>
 
         <Tabs defaultValue="bridal" className="w-full" onValueChange={setActiveCategory}>
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-transparent">
+          <TabsList className="flex flex-wrap justify-center gap-2 mb-12 bg-transparent">
             {categories.map((category) => (
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="data-[state=active]:bg-brandRed data-[state=active]:text-brandNavy rounded-full border border-brandRed/30"
+                className="min-w-[140px] text-center data-[state=active]:bg-brandRed data-[state=active]:text-brandNavy rounded-full border border-brandRed/30"
               >
                 {category.name}
               </TabsTrigger>
@@ -105,10 +105,9 @@ export default function Creations() {
         </Tabs>
 
         <div className="text-center mt-12">
-        <Button asChild className="rounded-full bg-brandGold hover:bg-brandGold/80 text-brandNavy px-8">
-  <a href="/collections">View All Collections</a>
-</Button>
-
+          <Button asChild className="rounded-full bg-brandGold hover:bg-brandGold/80 text-brandNavy px-8">
+            <a href="/collections">View All Collections</a>
+          </Button>
         </div>
       </div>
     </section>

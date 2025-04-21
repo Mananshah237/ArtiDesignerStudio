@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
@@ -32,14 +32,6 @@ const testimonials = [
       "The custom tailoring service at Arti Designer Studio is unmatched. They transformed my ideas into a stunning outfit that fits perfectly and looks exactly how I envisioned.",
     avatar: "/placeholder.svg?height=100&width=100",
   },
-  {
-    id: 4,
-    name: "Kavita Joshi",
-    role: "Mother of the Bride",
-    content:
-      "For my daughter's wedding, I wanted something elegant yet comfortable. Arti Designer Studio delivered beyond my expectations with a beautiful saree that made me feel special.",
-    avatar: "/placeholder.svg?height=100&width=100",
-  },
 ]
 
 export default function Testimonials() {
@@ -47,13 +39,13 @@ export default function Testimonials() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
-  }
+  // ⏱️ Auto-rotation logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+    }, 4000) // 4 seconds
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section className="py-20 bg-brandRed/10" id="testimonials">
@@ -73,30 +65,27 @@ export default function Testimonials() {
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center text-center"
-            >
-              <Quote className="h-12 w-12 text-brandGold mb-6" />
-              <p className="text-lg md:text-xl text-brandNavy/80 italic mb-8 max-w-3xl">
-                "{testimonials[currentIndex].content}"
-              </p>
-              <Avatar className="h-16 w-16 mb-4">
-                <AvatarImage
-                  src={testimonials[currentIndex].avatar || "/placeholder.svg"}
-                  alt={testimonials[currentIndex].name}
-                />
-                <AvatarFallback>{testimonials[currentIndex].name.charAt(0)}</AvatarFallback>
-              </Avatar>
-              <h3 className="font-serif text-xl text-brandNavy">{testimonials[currentIndex].name}</h3>
-              <p className="text-brandNavy/70">{testimonials[currentIndex].role}</p>
-            </motion.div>
-          </div>
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center text-center"
+          >
+            <Quote className="h-12 w-12 text-brandGold mb-6" />
+            <p className="text-lg md:text-xl text-brandNavy/80 italic mb-8 max-w-3xl">
+              "{testimonials[currentIndex].content}"
+            </p>
+            <Avatar className="h-16 w-16 mb-4">
+              <AvatarImage
+                src={testimonials[currentIndex].avatar}
+                alt={testimonials[currentIndex].name}
+              />
+              <AvatarFallback>{testimonials[currentIndex].name.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <h3 className="font-serif text-xl text-brandNavy">{testimonials[currentIndex].name}</h3>
+            <p className="text-brandNavy/70">{testimonials[currentIndex].role}</p>
+          </motion.div>
 
           <div className="flex justify-center mt-8 gap-2">
             {testimonials.map((_, index) => (
@@ -110,26 +99,6 @@ export default function Testimonials() {
               />
             ))}
           </div>
-
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full border-brandRed text-brandNavy hover:bg-brandRed/10 hidden md:flex"
-            onClick={prevTestimonial}
-          >
-            <ChevronLeft className="h-6 w-6" />
-            <span className="sr-only">Previous testimonial</span>
-          </Button>
-
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full border-brandRed text-brandNavy hover:bg-brandRed/10 hidden md:flex"
-            onClick={nextTestimonial}
-          >
-            <ChevronRight className="h-6 w-6" />
-            <span className="sr-only">Next testimonial</span>
-          </Button>
         </div>
       </div>
     </section>

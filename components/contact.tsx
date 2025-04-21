@@ -39,8 +39,7 @@ export default function Contact() {
             <Card className="border-none shadow-lg overflow-hidden h-full">
               <CardContent className="p-0 h-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6768!2d72.1513!3d21.7679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDQ2JzA0LjQiTiA3MsKwMDknMDQuNyJF!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin"
-                  width="100%"
+                   src="https://www.google.com/maps?q=21.75592569229984,72.14413515248437&z=15&output=embed"width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: "400px" }}
                   allowFullScreen
