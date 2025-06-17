@@ -7,36 +7,46 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const categories = [
-  { id: "bridal", name: "Bridal Wear" },
-  { id: "party", name: "Party Wear" },
-  { id: "traditional", name: "Traditional" },
-  { id: "casual", name: "Casual Ethnic" },
+  { id: "bridal", name: "Bridal Lehengas" },
+  { id: "party", name: "Chaniya Choli" },
+  { id: "traditional", name: "Indo Western" },
+  { id: "casual", name: "Sarees" },
 ]
 
 const creations = {
   bridal: [
-    { id: 1, image: "/placeholder.svg?height=600&width=400", name: "Royal Bridal Lehenga" },
-    { id: 2, image: "/placeholder.svg?height=600&width=400", name: "Embroidered Wedding Saree" },
-    { id: 3, image: "/placeholder.svg?height=600&width=400", name: "Designer Bridal Gown" },
-    { id: 4, image: "/placeholder.svg?height=600&width=400", name: "Traditional Wedding Ensemble" },
+    { id: 1, image: "/smeet/bridal_lehengas/img1.jpg", name: "Royal Bridal Lehenga" },
+    { id: 2, image: "/smeet/bridal_lehengas/img2.jpg", name: "Crimson Embroidered Ensemble" },
+    { id: 3, image: "/smeet/bridal_lehengas/img3.jpg", name: "Zari & Kundan Set" },
+    { id: 4, image: "/smeet/bridal_lehengas/img4.jpg", name: "Maroon Velvet Bridal" },
+    { id: 5, image: "/smeet/bridal_lehengas/img5.jpg", name: "Mirror Work Lehenga" },
+    { id: 6, image: "/smeet/bridal_lehengas/img6.jpg", name: "Velvet Panelled Bridal" },
+    { id: 7, image: "/smeet/bridal_lehengas/img7.jpg", name: "Peach Zardozi Lehenga" },
+    { id: 8, image: "/smeet/bridal_lehengas/img8.jpg", name: "Gold-Red Traditional Set" },
   ],
   party: [
-    { id: 1, image: "/placeholder.svg?height=600&width=400", name: "Sequin Party Saree" },
-    { id: 2, image: "/placeholder.svg?height=600&width=400", name: "Cocktail Anarkali" },
-    { id: 3, image: "/placeholder.svg?height=600&width=400", name: "Evening Gown" },
-    { id: 4, image: "/placeholder.svg?height=600&width=400", name: "Designer Party Wear" },
+    { id: 1, image: "/smeet/chaniya_choli/IMG_101.jpg", name: "Classic Ghagra Choli" },
+    { id: 2, image: "/smeet/chaniya_choli/img102.jpg", name: "Vibrant Mirror Chaniya" },
+    { id: 3, image: "/smeet/chaniya_choli/img103.jpg", name: "Festive Red Choli" },
   ],
   traditional: [
-    { id: 1, image: "/placeholder.svg?height=600&width=400", name: "Banarasi Silk Saree" },
-    { id: 2, image: "/placeholder.svg?height=600&width=400", name: "Gujarati Traditional Chaniya Choli" },
-    { id: 3, image: "/placeholder.svg?height=600&width=400", name: "Embroidered Salwar Suit" },
-    { id: 4, image: "/placeholder.svg?height=600&width=400", name: "Handloom Cotton Saree" },
+    { id: 1, image: "/smeet/indo_western/img201.jpg", name: "Modern Fusion Kurti Set" },
+    { id: 2, image: "/smeet/indo_western/img202.jpg", name: "Silk Indo-Western Dress" },
+    { id: 3, image: "/smeet/indo_western/img203.jpg", name: "Embroidered Fusion Look" },
+    { id: 4, image: "/smeet/indo_western/img204.jpg", name: "Layered Indo Gown" },
+    { id: 5, image: "/smeet/indo_western/img205.jpg", name: "Chic Designer Fusion" },
   ],
   casual: [
-    { id: 1, image: "/placeholder.svg?height=600&width=400", name: "Printed Kurti" },
-    { id: 2, image: "/placeholder.svg?height=600&width=400", name: "Casual Palazzo Set" },
-    { id: 3, image: "/placeholder.svg?height=600&width=400", name: "Daily Wear Saree" },
-    { id: 4, image: "/placeholder.svg?height=600&width=400", name: "Comfortable Ethnic Set" },
+    { id: 1, image: "/smeet/sarees/img301.jpg", name: "Elegant Printed Saree" },
+    { id: 2, image: "/smeet/sarees/img302.jpg", name: "Casual Daily Wear" },
+    { id: 3, image: "/smeet/sarees/img303.jpg", name: "Minimalist Cotton Saree" },
+    { id: 4, image: "/smeet/sarees/img304.jpg", name: "Simple Festive Saree" },
+    { id: 5, image: "/smeet/sarees/img305.jpg", name: "Lightweight Georgette Saree" },
+    { id: 6, image: "/smeet/sarees/img306.jpg", name: "Pastel Printed Saree" },
+    { id: 7, image: "/smeet/sarees/img307.jpg", name: "Bold Blue Casual Saree" },
+    { id: 8, image: "/smeet/sarees/img308.jpg", name: "Everyday Yellow Saree" },
+    { id: 9, image: "/smeet/sarees/img309.jpg", name: "Elegant Linen Saree" },
+    { id: 10, image: "/smeet/sarees/img310.jpg", name: "Warm Toned Saree" },
   ],
 }
 
@@ -79,7 +89,7 @@ export default function Creations() {
           {Object.keys(creations).map((category) => (
             <TabsContent key={category} value={category} className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {creations[category].map((item, index) => (
+                {creations[category].slice(0,4).map((item, index) => (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -89,7 +99,7 @@ export default function Creations() {
                   >
                     <div className="aspect-[3/4] overflow-hidden rounded-lg">
                       <img
-                        src={item.image || "/placeholder.svg"}
+                        src={item.image}
                         alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
